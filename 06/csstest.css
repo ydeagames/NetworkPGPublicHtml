@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: gray;
+    color: white;
+    border: lime medium solid;
+    margin: 1em;
+    padding: 1em;
+}
+
+p {
+    background-color: orange;
+    border: medium black dotted;
+    margin: 3em;
+    padding: 2em 1em;
+}
+
+p span {
+    text-decoration: underline;
+}

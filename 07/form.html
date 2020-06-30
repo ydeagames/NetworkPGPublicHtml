@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" href="form.css">
+  <title>フォーム</title>
+</head>
+
+<body>
+  <div class="columns is-centered">
+    <div class="column">
+      <section class="hero is-small">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              フォーム
+            </h1>
+            <h2 class="subtitle">
+              商品についてのご感想をお聞かせください
+            </h2>
+          </div>
+        </div>
+      </section>
+      <section class="section is-small">
+        <div class="container">
+          <form action="postget.php" method="post">
+            <div class="field">
+              <label class="label is-normal">お名前</label>
+              <div class="control">
+                <input class="input is-primary" type="text" name="name" placeholder="渡来 伝斗" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">性別</label>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="gender" value="male" required>
+                  男性
+                </label>
+                <label class="radio">
+                  <input type="radio" name="gender" value="female" required>
+                  女性
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">メールアドレス</label>
+              <div class="control">
+                <input class="input is-primary" type="text" name="email" placeholder="trident@example.com" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">どこからアクセスしていますか</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select name="access" required>
+                    <option value="" disabled selected>選択してください</option>
+                    <option value="home">自宅</option>
+                    <option value="school">学校</option>
+                    <option value="work">会社</option>
+                    <option value="mobile">モバイル</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">この商品はいかがでしたか？</label>
+              <div class="control">
+                <div class="radio">
+                  <label class="radio">
+                    <input type="radio" name="rate" value="good" required>
+                    良い
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="rate" value="average" required>
+                    ふつう
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="rate" value="bad" required>
+                    悪い
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">良かった点を教えてください</label>
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox" name="point" value="design">
+                  デザイン
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="point" value="package">
+                  パッケージ
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="point" value="price">
+                  価格
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="point" value="performance">
+                  性能
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">良かった点を教えてください</label>
+              <div class="control">
+                <textarea class="textarea is-primary" name="feedback" placeholder="〇△□が良かったです！"></textarea>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button class="button is-primary" type="submit">送信</button>
+                <button class="button is-warning" type="reset">削除</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>

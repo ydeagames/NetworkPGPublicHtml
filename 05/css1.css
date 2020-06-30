@@ -1,0 +1,15 @@
+h1 {
+    font-style: italic;
+}
+
+h2 {
+    color: red;
+}
+
+p {
+    font-size: 10pt;
+}
+
+li {
+    text-decoration: underline;
+}

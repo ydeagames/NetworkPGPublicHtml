@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table style="border: solid 1px black;">
+        <tr>
+            <td rowspan="3">cell-01</td>
+            <td colspan="3">cell-02</td>
+        </tr>
+        <tr>
+            <td rowspan="2">cell-02</td>
+            <td colspan="2">cell-03</td>
+        </tr>
+        <tr>
+            <td>cell-02</td>
+            <td rowspan="2">cell-03</td>
+        </tr>
+        <tr>
+            <td>cell-01</td>
+            <td colspan="2">cell-02</td>
+        </tr>
+    </table>
+    <style>
+        table, td {
+            border: solid 1px black;
+            border-collapse: collapse;
+            height: 100px;
+            text-align: center;
+        }
+        table {
+            width: 90%;
+            margin: auto;
+        }
+    </style>
+</body>
+</html>
