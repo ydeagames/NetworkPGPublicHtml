@@ -1,5 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px 50px;
+}
+
 header {
-    border-left: 1px blue solid;
-    border-bottom: 1px blue solid;
-    border-radius: 20px;
+    border-left: 2px blue solid;
+    border-bottom: 2px blue solid;
+    border-bottom-left-radius: 20px;
+    padding: 1em 1.5em;
+}
+
+footer {
+    border-top: 1px black solid;
+    text-align: center;
+    padding-top: 1em;
+}
+
+#main p {
+    padding: 2em 0;
+    clear: both;
+}
+
+#main p::first-letter {
+    font-size: 2em;
+    vertical-align: top;
+    float: left;
+}
+
+.block2 {
+    column-count: 2;
+    column-rule: 1px black solid;
+    column-gap: 2em;
+}
+
+.block3 {
+    column-count: 3;
+    column-rule: 1px black solid;
+    column-gap: 2em;
 }
