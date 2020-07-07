@@ -187,22 +187,24 @@
             </tr>
         </thead>
         <tbody>
-            <?php
-            foreach ($colors as $name => $hex) {
-                $r = hexdec(substr($hex,0,2));
-                $g = hexdec(substr($hex,2,2));
-                $b = hexdec(substr($hex,4,2));
-                $yiq = (($r*299)+($g*587)+($b*114))/1000;
-                $col = ($yiq >= 128) ? 'black' : 'white';
-            ?>
+<?php
+foreach ($colors as $name => $hex) {
+    $r = hexdec(substr($hex,0,2));
+    $g = hexdec(substr($hex,2,2));
+    $b = hexdec(substr($hex,4,2));
+    $yiq = (($r*299)+($g*587)+($b*114))/1000;
+    $col = ($yiq >= 128) ? 'black' : 'white';
+            
+echo <<<EOL
                 <tr>
-                    <td style="color: <?php echo $col; ?>; background-color: <?php echo $name; ?>;"><?php echo $name; ?></td>
-                    <td><?php echo $name; ?></td>
-                    <td>#<?php echo $hex; ?></td>
+                    <td style="color: {$col}; background-color: {$name};">{$name}</td>
+                    <td>{$name}</td>
+                    <td>#{$hex}</td>
                 </tr>
-            <?php
-            }
-            ?>
+
+EOL;
+}
+?>
         </tbody>
     </table>
 </body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日付</title>
+    <style>
+        input {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <p>曜日を調べます。年月日を西暦で入力してください</p>
+    <div>
+        <form action="dayweek.php" method="post">
+            <input type="number" name="year" value="2000">
+            年
+            <input type="number" name="month" value="7">
+            月
+            <input type="number" name="day" value="7">
+            日
+            <button type="submit">送信</button>
+        </form>
+    </div>
+</body>
+</html>
