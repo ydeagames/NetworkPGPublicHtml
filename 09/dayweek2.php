@@ -21,11 +21,11 @@
     <p>曜日を調べます。年月日を西暦で入力してください</p>
     <div>
         <form action="dayweek2.php" method="post">
-            <input type="number" name="year" value="2000">
+            <input type="number" name="year" value="2000" required>
             年
-            <input type="number" name="month" value="7">
+            <input type="number" name="month" value="7" required>
             月
-            <input type="number" name="day" value="7">
+            <input type="number" name="day" value="7" required>
             日
             <button type="submit">送信</button>
         </form>
