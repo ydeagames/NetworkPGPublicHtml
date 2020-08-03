@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>傾斜変形、アニメーション機能 デモ</title>
+    <style>
+        @keyframes animate1 {
+            0% { transform: skewX(9deg); }
+            10% { transform: skewX(-8deg); }
+            20% { transform: skewX(7deg); }
+            30% { transform: skewX(-6deg); }
+            40% { transform: skewX(5deg); }
+            50% { transform: skewX(-4deg); }
+            60% { transform: skewX(3deg); }
+            70% { transform: skewX(-2deg); }
+            80% { transform: skewX(1deg); }
+            90% { transform: skewX(0deg); }
+            100% { transform: skewX(0deg); }
+        }
+        @keyframes animate2 {
+            0%{ transform: translateX(0);}
+            20%{ transform: translateX(13px);}
+            50%{ transform: translateX(5px); }
+            60%{ transform: translateX(20px);}
+            90%{ transform: translateX(0);}
+            100%{ transform: translateX(0);}
+        }
+        .img_anime_btn {
+            animation-iteration-count: infinite;
+            animation-name: animate1;
+            animation-duration: 1.5s;
+        }
+        .img_arrow {
+            z-index: 55;
+            position: absolute;
+            width: 20%!important;
+            top: -15%!important;
+            left: 40px;
+            animation-iteration-count: infinite;
+            animation-name: animate2;
+            animation-duration: 1.5s;
+        }
+        .a-anime {
+            position: relative;
+            display: inline-block;
+            margin: 20px auto 0;
+            max-width: 100%!important;
+            padding-left: 0%!important;
+        }
+    </style>
+</head>
+<body>
+    <p align="center">
+        <a class="a-anime">
+            <img class="img_arrow" src="https://perfectbhcare.com/hyalomen/b022006_1143/img/555_arrow.png" alt="">
+            <img class="img_anime_btn" src="https://perfectbhcare.com/hyalomen/b022006_1143/img/555_btn.png" alt="">
+        </a>
+    </p>
+</body>
+</html>
