@@ -16,20 +16,19 @@
         <th>得点</th>
         <th>名前</th>
     </tr>
-    <tr>
 <?php
 try {
     // 接続
-    $pdo = new PDO('sqlite:s.db');
+    $pdo = new PDO('mysql:dbname=gt124;host=127.0.0.1', 'gt124', 'gt124gt124');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
     // テーブル作成
     $pdo->exec("CREATE TABLE IF NOT EXISTS scoreboard(
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        date DATE
-        score INTEGER
-        name VARCHAR(20),
+        id INTEGER PRIMARY KEY AUTO_INCREMENT,
+        date DATE,
+        score INTEGER,
+        name VARCHAR(20)
     )");
 
     if ($_POST['cmd'] == 'add') {
@@ -39,12 +38,15 @@ try {
     }
 
     // 選択
-    $stmt = $pdo->prepare("SELECT * FROM scoreboard");
+    $stmt = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score DESC");
     $stmt->execute();
     $r1 = $stmt->fetchAll();
 
     // 結果を確認
-    var_dump($r1);
+    foreach ($r1 as $i => $data) {
+        $i1 = $i + 1;
+        echo("<tr><td>{$i1}</td><td>{$data['date']}</td><td>{$data['score']}</td><td>{$data['name']}</td></tr>");
+    }
 
 } catch (Exception $e) {
 
@@ -53,21 +55,16 @@ try {
 }
 
 ?>
-        <td>1</td>
-        <td>2020-11-01</td>
-        <td>5000</td>
-        <td>user01</td>
-    </tr>
 </table>
 <hr>
 <div class="right">
-    <form action="score1.php" method="post">
+    <form action="score2.php" method="post">
         <input type="hidden" name="cmd" value="add">
         <button type="submit" style="font-size:6pt">s.db初期化</button>
     </form>
 </div>
 <p>スコアを入力してください</p>
-<form action="score1.php" method="post">
+<form action="score2.php" method="post">
     <input type="hidden" name="cmd" value="add">
     <label for="fdate" >日付</label>
     <input type="date" name="date" id="fdate">
