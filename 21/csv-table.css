@@ -1,0 +1,36 @@
+table, td, th, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 0.5em;
+}
+
+input {
+    height: 2em;
+}
+
+input[type="submit"] {
+    height: 2.5em;
+}
+
+.right {
+    text-align: right;
+}
+
+.alert-info {
+    padding: 1em;
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    border-radius: .5em;
+}
+
+.alert-danger {
+    padding: 1em;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: .5em;
+}
